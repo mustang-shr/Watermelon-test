@@ -1,4 +1,4 @@
-# Watermelon Software Recruitment Assignment — Autonomous Platform Agent (GitHub)
+# Watermelon Software Recruitment Assignment  Autonomous Platform Agent (GitHub)
 
 Natural-language instructions executed against GitHub, with persistent graph memory,
 runtime capability synthesis, and a measured self-learning signal. Built for the
@@ -10,17 +10,17 @@ three live-call instructions.
 ## What's verified vs what isn't
 
 Everything in `src/memory/`, `src/tools/`, `src/agent/executor.py` + `src/agent/agent.py`'s
-orchestration logic, and `api.py` is verified by the test suite — **35 tests, zero API
+orchestration logic, and `api.py` is verified by the test suite  35 tests, zero API
 keys needed**, including a real GitHub API call against a public repo, mocked-request
 tests for every write operation, two independently-tested capability-synthesis gap
 types, and a simulated-restart test proving synthesized capabilities survive a process
-restart (this was broken until an internal review caught it — see ARCHITECTURE.md).
+restart (this was broken until an internal review caught it see ARCHITECTURE.md).
 
 **Not verified** (this build environment can't reach `build.nvidia.com` or make
 authenticated GitHub writes): the live `NvidiaNIMPlanner` and `NvidiaNIMCodeGen` calls
 in `src/agent/planner.py` and `src/tools/synthesis.py`. This is the single largest open
-risk in the submission — see ARCHITECTURE.md section 2. The exact NIM model ID is a
-placeholder — confirm it on your `build.nvidia.com` catalog page before running.
+risk in the submission see ARCHITECTURE.md section 2. The exact NIM model ID is a
+placeholder  confirm it on your `build.nvidia.com` catalog page before running.
 
 ## Setup
 
@@ -55,7 +55,7 @@ python scripts/run_demo.py "your own instruction here"
 ```bash
 python api.py        # http://localhost:8000 - POST /run {"instruction": "..."}, GET /tools, GET /health
 ```
-Not required by the brief — added because FastAPI is a JD-listed required skill and
+Not required by the brief added because FastAPI is a JD-listed required skill and
 the `Agent` class was already there to wrap. Tested with a fake agent, zero live keys
 (`tests/test_api.py`).
 
